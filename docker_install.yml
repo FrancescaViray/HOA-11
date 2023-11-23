@@ -1,0 +1,13 @@
+---
+- name: Install and build Dockerfile
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Copy Dockerfile to the project directory
+      copy:
+        src: Dockerfile
+        dest: /home/viray/HOA-11
+
+    - name: Build Docker image
+      command: "docker build -t your_image_name /home/viray/HOA-11"
+
